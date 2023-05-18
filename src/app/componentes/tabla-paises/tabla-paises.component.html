@@ -1,0 +1,13 @@
+<div class="me-5 order-md-last">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-primary">Seleccione pais con un click</span>
+    
+    </h4>
+    <ul>
+        <li (click)="setPais(pais)" class="btn btn-primary d-flex  border border-dark justify-content-center align-items-center text-center" *ngFor="let pais of listaPaises">
+            <h3 class="justify-content-center align-items-center text-center">{{ pais.nombre }}</h3>
+            <img width="32px" height="32px" [src]="pais.imagen" alt="Bandera de {{ pais.nombre }}">
+        </li>
+    </ul>
+
+</div>

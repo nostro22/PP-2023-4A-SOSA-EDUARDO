@@ -1,0 +1,30 @@
+{
+  "hosting": {
+    "site": "simulacro4parte3eduardososa224",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "hosting": {
+      "targets": [
+        {
+          "target": "simulacroPeliculas",
+          "public": "dist",
+          "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+          ]
+        }
+      ]
+    }
+  }
+}

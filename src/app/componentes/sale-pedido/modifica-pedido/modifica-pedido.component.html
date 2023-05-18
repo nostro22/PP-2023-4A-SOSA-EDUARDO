@@ -1,0 +1,90 @@
+<div class="d-flex justify-content-center align-items-center flex-column ">
+    <form [formGroup]="formUser" class="login-form">
+      <div class="card " >
+        <div class="card-body">
+            <div class="mb-3">
+              <label for="mail" class="form-label">Mail Cliente:</label>
+              <input formControlName="email" readonly type="email" class="form-control" id="mail" placeholder="Ingrese email cliente" >
+              <small *ngIf="formUser.controls.email.errors?.['required'] &&
+              formUser.controls.email.touched" class="invalid">El email es requerido</small>
+              <small *ngIf="formUser.controls.email.errors?.['email'] &&
+              formUser.controls.email.touched" class="invalid">
+                Formato de mail incorrecto
+              </small>
+            </div>
+          <div class="col-md-6 mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Ingrese nombre">
+            <small
+              *ngIf="formUser.controls.nombre.errors?.['required'] && formUser.controls.nombre.touched"
+              class="invalid">
+              El nombre es requerido
+            </small>
+     
+          </div>
+          <div class="mb-3">
+            <label for="imageInput" class="form-label">Localidad:</label>
+            <input formControlName="localidad" readonly type="text" class="form-control" id="imageInput" >
+            <div class="p-2 gap-2">
+              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="Localidad 1">
+              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="Localidad 2">
+              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="Localidad 3">
+              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="Localidad 4">
+              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="Localidad 5">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label">direccion:</label>
+            <input formControlName="direccion" type="text" class="form-control" id="tipo" value="{{pedidoRecibido.direccion}}" placeholder="Ingrese direccion" >
+          
+            <small *ngIf="formUser.controls.direccion.errors?.['required'] &&
+            formUser.controls.direccion.touched" class="invalid">direccion es requerido</small>
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">descripcion:</label>
+            <input formControlName="descripcion" type="descripcion" class="form-control" id="descripcion" >
+            <small *ngIf="formUser.controls.descripcion.errors?.['maxLength'] &&
+            formUser.controls.direccion.touched" class="invalid">
+              Maximo 99 letras
+            </small>
+            <small *ngIf="formUser.controls.descripcion.errors?.['required'] &&
+            formUser.controls.descripcion.touched" class="invalid">descripcion es requerido</small>
+          </div>
+          <div class="mb-3">
+            <label for="precio" class="form-label">Precio:</label>
+            <input formControlName="precio" type="number" class="form-control" id="precio">
+            <small *ngIf="formUser.controls.precio.errors?.['min'] &&
+            formUser.controls.precio.touched" class="invalid">
+              debe ser positivo
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="peso" class="form-label">peso:</label>
+            <input formControlName="peso" type="number" class="form-control" id="peso">
+            <small *ngIf="formUser.controls.peso.errors?.['min'] &&
+            formUser.controls.peso.touched" class="invalid">
+              debe ser superior o igual a 500gr
+            </small>
+            <small *ngIf="formUser.controls.peso.errors?.['max'] &&
+            formUser.controls.peso.touched" class="invalid">
+              debe ser inferior o igual a 1000gr
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="estado" class="form-label">estado:</label>
+            <input formControlName="estado" type="string"  readonly class="form-control" id="estado">
+            <div>
+                <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="listo sin entregar">
+              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="entregado">
+              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="rechazado">
+            </div>
+          </div>
+        </div>
+  
+       
+      </div>
+    </form>
+    <!-- [disabled]="!formUser.valid" -->
+    <button  class="btn btn-primary mt-2 col-8" (click)="modificarPedido()">Modificar</button>
+
+  

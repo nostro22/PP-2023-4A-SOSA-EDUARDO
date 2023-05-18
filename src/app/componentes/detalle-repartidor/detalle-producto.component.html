@@ -1,0 +1,18 @@
+<div  class="card" >
+    <!-- <h1>{{detalleRecibido |json}}</h1> -->
+    <div *ngIf="detalleRecibido" class="card-body">
+      <h5 class="card-title">Codigo:{{detalleRecibido.codigo}}</h5>
+      <p class="card-text"> descripcion: <span class="text-primary">{{detalleRecibido.descripcion}}</span></p>
+      <p class="card-text"> precio: <span class="text-primary">{{detalleRecibido.precio}}</span></p>
+      <p class="card-text"> stock:<span class="text-primary">{{detalleRecibido.stock}}</span></p>
+      <p class="card-text"> Pais: <span class="text-primary">{{detalleRecibido.pais.nombre}}</span>
+      <p class="card-text"> Comestible: 
+        <span *ngIf="detalleRecibido.comestible" class="text-primary">SI</span>
+        <span *ngIf="!detalleRecibido.comestible" class="text-primary">NO</span>
+      </p>
+    </div>
+    
+    <div *ngIf="!detalleRecibido" class="card" >
+      <p class="p-5">Selecione una pelicula para ver sus detalles</p>
+    </div>
+  </div>

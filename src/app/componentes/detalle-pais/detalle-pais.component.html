@@ -1,0 +1,14 @@
+<div  class="card" >
+    <!-- <h1>{{detalleRecibido |json}}</h1> -->
+    <div *ngIf="detalleRecibido" class="card-body">
+      <h5 class="card-title">Pais:{{detalleRecibido.pais.nombre}}</h5>
+      <img class="text-primary" width="100px" height="100px" [src]="detalleRecibido.pais.bandera" />
+      <p class="card-text"> Poblacion: <span class="text-primary">{{detalleRecibido.pais.info.info.population}}</span></p>
+      <p class="card-text"> Capital:<span class="text-primary">{{detalleRecibido.pais.info.info.capital}}</span></p>
+     
+    </div>
+    
+    <div *ngIf="!detalleRecibido" class="card" >
+      <p class="p-5">Selecione una pelicula para ver sus detalles</p>
+    </div>
+  </div>

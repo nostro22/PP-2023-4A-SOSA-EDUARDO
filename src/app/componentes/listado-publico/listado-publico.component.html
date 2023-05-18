@@ -1,0 +1,23 @@
+            <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">codigo</th>
+                        <th scope="col">descripcion</th>
+                        <th scope="col">precio</th>
+                        <th scope="col">stock</th>
+                        <th scope="col">pais</th>
+                        <th scope="col">comestible</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor="let producto of productosTodos$ | async">
+                        <td>{{producto.codigo}}</td>
+                        <td>{{producto.descripcion}}</td>
+                        <td>{{producto.precio}}</td>
+                        <td>{{producto.stock}}</td>
+                        <td>{{producto.pais.nombre}}</td>
+                        <td>{{producto.comestible}}</td>
+                        <td><img class="img-thumbnail" width="40px" height="40px" [src]="producto.pais.bandera" alt="bandera"></td>
+                      </tr>
+                    </tbody>
+                  </table>
