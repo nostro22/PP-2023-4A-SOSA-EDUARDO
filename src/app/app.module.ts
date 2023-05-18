@@ -28,6 +28,7 @@ import { AltasProductoFormularioComponent } from './componentes/altas-producto-f
 import { AltasProductosComponent } from './componentes/altas-productos/altas-productos.component';
 import { DetalleProductoComponent } from './componentes/detalle-repartidor/detalle-producto.component';
 import { ListadoPublicoComponent } from './componentes/listado-publico/listado-publico.component';
+import { ContenedorAltaComponent } from './componentes/contenedor-alta/contenedor-alta.component';
 
 
 
@@ -48,7 +49,8 @@ import { ListadoPublicoComponent } from './componentes/listado-publico/listado-p
     AltasProductoFormularioComponent,
     AltasProductosComponent,
     DetalleProductoComponent,
-    ListadoPublicoComponent
+    ListadoPublicoComponent,
+    ContenedorAltaComponent
     
   ],
   imports: [

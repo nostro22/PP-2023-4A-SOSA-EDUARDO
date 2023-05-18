@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center flex-column ">
+ <!-- <div class="d-flex justify-content-center align-items-center flex-column ">
     <form [formGroup]="formUser" class="login-form">
       <div class="card " >
         <div class="card-body">
@@ -50,41 +50,8 @@
             <small *ngIf="formUser.controls.descripcion.errors?.['required'] &&
             formUser.controls.descripcion.touched" class="invalid">descripcion es requerido</small>
           </div>
-          <div class="mb-3">
-            <label for="precio" class="form-label">Precio:</label>
-            <input formControlName="precio" type="number" class="form-control" id="precio">
-            <small *ngIf="formUser.controls.precio.errors?.['min'] &&
-            formUser.controls.precio.touched" class="invalid">
-              debe ser positivo
-            </small>
-          </div>
-          <div class="mb-3">
-            <label for="peso" class="form-label">peso:</label>
-            <input formControlName="peso" type="number" class="form-control" id="peso">
-            <small *ngIf="formUser.controls.peso.errors?.['min'] &&
-            formUser.controls.peso.touched" class="invalid">
-              debe ser superior o igual a 500gr
-            </small>
-            <small *ngIf="formUser.controls.peso.errors?.['max'] &&
-            formUser.controls.peso.touched" class="invalid">
-              debe ser inferior o igual a 1000gr
-            </small>
-          </div>
-          <div class="mb-3">
-            <label for="estado" class="form-label">estado:</label>
-            <input formControlName="estado" type="string"  readonly class="form-control" id="estado">
-            <div>
-                <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="listo sin entregar">
-              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="entregado">
-              <input (click)="setLocalidad($event)" type="button" class="btn btn-secondary" value="rechazado">
-            </div>
-          </div>
-        </div>
-  
+     
        
       </div>
     </form>
-    <!-- [disabled]="!formUser.valid" -->
-    <button  class="btn btn-primary mt-2 col-8" (click)="modificarPedido()">Modificar</button>
-
-  
+   -->

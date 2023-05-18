@@ -11,13 +11,15 @@ import { IsAdminGuard } from 'src/is-admin.guard';
 import { SalePedidosComponent } from './componentes/sale-pedido/sale-pedidos/sale-pedidos.component';
 import { AltasProductosComponent } from './componentes/altas-productos/altas-productos.component';
 import { ListadoPublicoComponent } from './componentes/listado-publico/listado-publico.component';
+import { ContenedorAltaComponent } from './componentes/contenedor-alta/contenedor-alta.component';
 const routes: Routes = [
   {path:"", title:"Bienvenido", component: BienvenidoComponent},
   {path:"bienvenida", redirectTo:""},
-  {path:"búsqueda", title:"Repartidor Detalles", component: BusquedaComponent},
+  {path:"búsqueda", title:"Repartidor Detalles", component: BusquedaComponent , canActivate :[LoginGuard]},
   {path:"usuario/ingreso", title:"Ingreso", component: UsuarioIngresoComponent},
   {path:"pedidos/alta", title:"Alta", component: SalePedidosComponent},
   {path:"actor/alta", title:"Alta", component: AltasProductosComponent, canActivate :[LoginGuard]},
+  {path:"contenerdor/alta", title:"Alta Contenedor", component: ContenedorAltaComponent, canActivate :[IsAdminGuard]},
   {path:"usuario/registro", title:"Registro", component: UsuarioRegistroComponent},
   {path:"listado/publico", title:"Registro", component: ListadoPublicoComponent},
   {path:"error", title:"ERROR", component: ErrorComponent},

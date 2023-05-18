@@ -13,39 +13,25 @@ export class ModificaPedidoComponent {
 
   constructor(private fb: FormBuilder, private firestore: FirestoreService) {
   }
-  get nombre() {
+  get codigo() {
     return this.formUser.get('nombre') as FormControl;
   }
-  get email() {
+  get color() {
     return this.formUser.get('email') as FormControl;
   }
-  get localidad() {
+  get empresa() {
     return this.formUser.get('localidad') as FormControl;
   }
-  get direccion() {
+  get capacidad() {
     return this.formUser.get('direccion') as FormControl;
   }
-  get descripcion() {
-    return this.formUser.get('descripcion') as FormControl;
-  }
-  get precio() {
-    return this.formUser.get('precio') as FormControl;
-  }
-  get peso() {
-    return this.formUser.get('peso') as FormControl;
-  }
-  get estado() {
-    return this.formUser.get('estado') as FormControl;
-  }
+  
 
   onImageSelected(event: any) {
     const file = event.target.files[0];
     // TODO: Modify the image using the selected file
   }
-  setLocalidad(event: any) {
-    this.localidad.setValue(event.target.value);
-  }
-
+  
   modificarPedido() {
 
     alert(this.pedidoRecibido);
